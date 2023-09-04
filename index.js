@@ -21,7 +21,7 @@ class Player {
         // c.fillStyle='green'
         // c.fillRect(this.position.x,this.position.y,100,100)
         c.arc(this.position.x,this.position.y, 5,0,Math.PI * 2,false)
-        c.fill = 'red'
+        c.fillStyle = 'red'
         c.fill();
 
         c.moveTo(this.position.x + 30,this.position.y)
@@ -40,4 +40,15 @@ const player = new Player({
 })
 
 console.log(player)
+player.draw()
+player.draw()
+player.draw()
+player.draw()
+player.draw()
+player.draw()
+player.draw()
+player.draw()
+player.draw()
+player.draw()
+player.draw()
 player.draw()
