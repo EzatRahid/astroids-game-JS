@@ -40,13 +40,3 @@ const player = new Player({
 })
 
 player.draw();
-player.draw();
-player.draw();
-player.draw();
-player.draw();
-player.draw();
-player.draw();
-player.draw();
-player.draw();
-player.draw();
-player.draw();
