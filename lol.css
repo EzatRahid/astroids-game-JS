@@ -12,9 +12,15 @@ body{
     background-color: #000;
 }
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
 .hamburger{
     display: flex;
     flex-direction: column;
+    width: 4%;
 } 
 
 .line{
