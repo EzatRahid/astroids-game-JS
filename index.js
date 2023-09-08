@@ -41,3 +41,25 @@ const player = new Player({
 
 player.draw();
 
+// PLAYER MOVEMENT
+
+const animate = () =>{
+    window.requestAnimationFrame(animate)
+}
+animate();
+
+window.addEventListener('keydown', (event) =>{
+    switch(event.code){
+        case 'KeyW':
+            console.log('W was pressed')
+            break
+        case 'KeyA':
+            console.log('A was pressed')
+            break
+        case 'KeyD':
+            console.log('D was pressed')
+            break
+        
+    }
+    console.log(event)
+})
