@@ -5,8 +5,7 @@ const c = canvas.getContext('2d')
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-c.fillStyle = 'black'
-c.fillRect(0,0,canvas.width,canvas.height)
+
 
 
 // PLAYER // ***************************
@@ -23,7 +22,7 @@ class Player {
         c.arc(this.position.x,this.position.y, 5,0,Math.PI * 2,false)
         c.fillStyle = 'red'
         c.fill();
-
+        c.beginPath()
         c.moveTo(this.position.x + 30,this.position.y)
         c.lineTo(this.position.x -10,this.position.y -10)
         c.lineTo(this.position.x -10,this.position.y +10)
@@ -31,6 +30,11 @@ class Player {
 
         c.strokeStyle = 'white'
         c.stroke();
+    }
+    update(){
+        this.draw()
+        this.position.x += this.velocity.x
+        this.position.y += this.velocity.y
     }
 }
 
@@ -46,14 +50,17 @@ player.draw();
 const keys = {
     w:{
         pressed:false 
-    }
+    },
 }
 
 const animate = () =>{
     window.requestAnimationFrame(animate)
-    if(keys.w.pressed){
-        player.velocity.x = 1
-    }
+    c.fillStyle = 'black'
+    c.fillRect(0,0,canvas.width,canvas.height)
+    player.update();
+
+    if(keys.w.pressed) player.velocity.x = 1
+    
 }
 animate();
 
