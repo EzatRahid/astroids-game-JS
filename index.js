@@ -43,8 +43,17 @@ player.draw();
 
 // PLAYER MOVEMENT
 
+const keys = {
+    w:{
+        pressed:false 
+    }
+}
+
 const animate = () =>{
     window.requestAnimationFrame(animate)
+    if(keys.w.pressed){
+        player.velocity.x = 1
+    }
 }
 animate();
 
