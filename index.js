@@ -47,35 +47,116 @@ player.draw();
 
 // PLAYER MOVEMENT
 
+
 const keys = {
-    w:{
-        pressed:false 
+    w :{
+        pressed: false
+    },
+    a :{
+        pressed: false
+    },
+    d :{
+        pressed: false
     },
 }
 
-const animate = () =>{
+const animate = () => {
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
     c.fillRect(0,0,canvas.width,canvas.height)
-    player.update();
+    player.update()
 
-    if(keys.w.pressed) player.velocity.x = 1
-    
+    if(keys.w.pressed){
+        player.velocity.x = 1
+    }
 }
+
 animate();
 
-window.addEventListener('keydown', (event) =>{
+window.addEventListener('keydown',(event) =>{
+    console.log(event)
+    
     switch(event.code){
         case 'KeyW':
-            console.log('W was pressed')
-            break
+        console.log('w key was pressed')
+        keys.w.pressed = true
+        break
         case 'KeyA':
-            console.log('A was pressed')
-            break
+        console.log('a key was pressed')
+        keys.a.pressed = true
+        break
         case 'KeyD':
-            console.log('D was pressed')
-            break
-        
+        console.log('d key was pressed')
+        keys.d.pressed = true
+        break
+
     }
-    console.log(event)
+
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const keys = {
+//     w:{
+//         pressed:false 
+//     },
+    
+//     a:{
+//         pressed:false 
+//     },
+    
+//     d:{
+//         pressed:false 
+//     },
+    
+// }
+
+// const animate = () =>{
+//     window.requestAnimationFrame(animate)
+//     c.fillStyle = 'black'
+//     c.fillRect(0,0,canvas.width,canvas.height)
+//     player.update();
+
+//     if(keys.w.pressed) player.velocity.x = 1
+    
+// }
+// animate();
+
+// window.addEventListener('keydown', (event) =>{
+//     switch(event.code){
+//         case 'KeyW':
+//             console.log('W was pressed')
+//             keys.w.pressed = true
+//             break
+//         case 'KeyA':
+//             console.log('A was pressed')
+//             keys.a.pressed = true
+//             break
+//         case 'KeyD':
+//             console.log('D was pressed')
+//             keys.d.pressed = true
+//             break
+        
+//     }
+//     console.log(event)
+// })
