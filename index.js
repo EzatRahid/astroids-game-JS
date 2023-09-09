@@ -72,13 +72,21 @@ const animate = () => {
     c.fillRect(0,0,canvas.width,canvas.height)
     player.update()
 
+    player.velocity.y= 0
+    player.velocity.x= 0
+
     if(keys.w.pressed){
-        player.velocity.x = 1
+        player.velocity.x = Math.cos(player.rotation)
+        player.velocity.y = Math.sin(player.rotation)
+
     }else{
         player.velocity.x = 0
     }
     if(keys.d.pressed){
-        player.rotation += 0.01
+        player.rotation += 0.03
+    }
+    if(keys.a.pressed){
+        player.rotation -= 0.03
     }
 
 }
