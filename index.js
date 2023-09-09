@@ -66,27 +66,34 @@ const keys = {
     },
 }
 
+const SPEED = 3
+const ROTSPEED = 0.05
+
 const animate = () => {
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
     c.fillRect(0,0,canvas.width,canvas.height)
     player.update()
 
-    player.velocity.y= 0
-    player.velocity.x= 0
+
 
     if(keys.w.pressed){
-        player.velocity.x = Math.cos(player.rotation)
-        player.velocity.y = Math.sin(player.rotation)
+        player.velocity.x = Math.cos(player.rotation) * SPEED
+        player.velocity.y = Math.sin(player.rotation) * SPEED
 
-    }else{
+    }else if(!keys.w.pressed){
+        player.velocity.x *= 0.97
+        player.velocity.y *= 0.97
+    }
+    else{
         player.velocity.x = 0
     }
+
     if(keys.d.pressed){
-        player.rotation += 0.03
+        player.rotation += ROTSPEED
     }
     if(keys.a.pressed){
-        player.rotation -= 0.03
+        player.rotation -= ROTSPEED
     }
 
 }
