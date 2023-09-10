@@ -182,27 +182,6 @@ window.addEventListener('keyup',(event) =>{
 
 })
 
-window.addEventListener('keyup',(event) =>{
-    console.log(event)
-    
-    switch(event.code){
-        case 'KeyW':
-      
-        keys.w.pressed = false
-        break
-        case 'KeyA':
-    
-        keys.a.pressed = false
-        break
-        case 'KeyD':
-     
-        keys.d.pressed = false
-        break
-
-    }
-
-
-})
 
 
 
