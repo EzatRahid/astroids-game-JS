@@ -90,6 +90,13 @@ const keys = {
 const SPEED = 3
 const ROTSPEED = 0.05
 
+const projectiles = []
+
+for( let i = projectiles.length - 1; i >=0; i--){
+    const projectile = projectiles[i]
+    projectile.update()
+}
+
 const animate = () => {
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
@@ -137,7 +144,18 @@ window.addEventListener('keydown',(event) =>{
      
         keys.d.pressed = true
         break
-
+        case 'Space' :
+        projectiles.push(new Projectile({
+            position: {
+                x:player.position.x,
+                y:player.position.y
+            },
+            velocity : {
+                x:1,
+                y:0
+            }
+        }))    
+        break
     }
 
 
@@ -165,8 +183,6 @@ window.addEventListener('keyup',(event) =>{
 })
 
 
-// PROJECTILES
 
-const projectiles = []
 
 
