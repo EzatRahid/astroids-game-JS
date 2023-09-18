@@ -109,7 +109,7 @@ const animate = () => {
         if(projectile.position.x + projectile.radius < 0 
             || projectile.position.x - projectile.radius > canvas.width 
             || projectile.position.y - projectile.radius > canvas.height 
-            || projectile.position.y + position.radius < 0){
+            || projectile.position.y + projectile.radius < 0){
             projectiles.splice(i,1)
         }
     }
